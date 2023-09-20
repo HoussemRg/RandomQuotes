@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {  useState } from 'react';
+import Axios from "axios";
 import './App.css';
 
 function App() {
+  const [quote,setQuote]=useState("");
+  const [author,setAuthor]=useState("");
+  const generateQuote=():void=>{
+    try{
+      Axios.get("http://api.quotable.io/random").then((res)=>{
+        setQuote(res.data.content);
+        setAuthor(res.data.author);
+      })
+    }catch{
+      console.log("error of fetching data");
+    }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='quotes container'>
+      <div className="box">
+      <h1 className="title">Quote of the Day</h1>
+      <div className="quote">{quote}</div>
+      <div className="author">{author}</div>
+      
+      <div className="quotes-footer">
+        <div className="icons">
+          <div><span className="material-symbols-outlined icon1">volume_up</span></div>
+          <div><span className="material-symbols-outlined icon2">note</span></div>
+          <div><i className="fab fa-twitter icon3"></i></div>
+        </div>
+        <button className="btn btn-primary generate" onClick={generateQuote}>Generate</button>
+      </div>
+    </div>
     </div>
   );
 }

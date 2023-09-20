@@ -1,7 +1,77 @@
 .App {
   text-align: center;
 }
-
+.box{
+  width: 80%;
+}
+.quotes{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 130px;
+}
+.title{
+  margin-top: 20px;
+  margin-bottom:20px ;
+}
+.quote{
+  margin-top: 20px;
+  width: 80%;
+  font-size: 20px;
+  font-weight: 500;
+}
+.author{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+  margin-bottom:20px ;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-bottom: solid 1px gray;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.quotes-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.icons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 30%;
+}
+.generate{
+  height: 35px;
+  width: 125px;
+  
+}
+.icon1{
+  padding:6.5px;
+  border-radius: 50%;
+  border: solid 3px #007BFF;
+}
+.icon2{
+  border-radius: 50%;
+  border: solid 3px #007BFF;
+  padding:6.5px;
+}
+.icon3{
+  border-radius: 50%;
+  border: solid 3px #007BFF;
+  padding:10px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +106,12 @@
     transform: rotate(360deg);
   }
 }
+/*
+@media screen and (max-width:350px){
+  .quotes{
+    
+    width: 100px;
+    
+  }
+}
+*/
